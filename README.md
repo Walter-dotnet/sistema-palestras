@@ -1,59 +1,92 @@
-# SistemaPalestras
+🎤 Sistema de Gerenciamento de Palestras
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.11.
+Sistema para gerenciamento de inscrições em palestras, composto por um backend em Node.js e um frontend em Angular.
 
-## Development server
 
-To start a local development server, run:
+🚀 Tecnologias Utilizadas
 
-```bash
-ng serve
-```
+Frontend
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
-## Code scaffolding
+Angular — Framework principal
+Bootstrap — Estilização e design responsivo
+TypeScript
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
 
-```bash
-ng generate component component-name
-```
+Backend
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
 
-```bash
-ng generate --help
-```
+Node.js com Express
+MySQL — Banco de dados relacional
+Bcrypt — Criptografia de senhas
 
-## Building
 
-To build the project run:
 
-```bash
-ng build
-```
+⚙️ Pré-requisitos
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Antes de começar, certifique-se de ter instalado:
 
-## Running unit tests
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+Node.js
+XAMPP (ou outro servidor MySQL)
+Angular CLI
 
-```bash
-ng test
-```
 
-## Running end-to-end tests
 
-For end-to-end (e2e) testing, run:
+🛠️ Como Rodar o Projeto
 
-```bash
-ng e2e
-```
+1. Banco de Dados
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
 
-## Additional Resources
+Importe o arquivo .sql no phpMyAdmin (via XAMPP).
+Certifique-se de que o servidor MySQL está rodando na porta padrão 3306.
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+
+2. Backend
+
+
+Navegue até a pasta server:
+
+
+bashcd server
+
+
+Instale as dependências:
+
+
+bashnpm install
+
+
+Inicie o servidor:
+
+
+bashnodemon server.js
+
+
+3. Frontend
+
+
+Na raiz do projeto, abra um novo terminal e instale as dependências:
+
+
+bashnpm install
+
+
+Inicie a aplicação Angular:
+
+
+bashng serve
+
+
+Acesse http://localhost:4200 no seu navegador.
+
+
+
+👤 Funcionalidades
+
+
+✅ Cadastro e login de usuários com criptografia de senha
+📋 Listagem de palestras disponíveis
+🔔 Inscrição e cancelamento de inscrição com confirmação via interface
+🛡️ Área administrativa para gerenciamento
