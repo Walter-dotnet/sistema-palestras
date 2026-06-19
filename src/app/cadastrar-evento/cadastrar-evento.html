@@ -1,0 +1,33 @@
+<h1>Cadastrar Palestra</h1>
+
+@if (mensagem) {
+<div class="alert alert-{{ tipoMensagem }} alert-dismissible fade show" role="alert" style="width: 50%; margin: 20px auto;">
+    {{ mensagem }}
+    <button type="button" class="btn-close" (click)="mensagem = ''" aria-label="Close"></button>
+</div>
+}
+
+<form [formGroup]="formularioEvento" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+        <label for="titulo" class="form-label">Título</label>
+        <input type="text" class="form-control" id="titulo" formControlName="titulo">
+    </div>
+    <div class="mb-3">
+        <label for="descricao" class="form-label">Descrição</label>
+        <textarea class="form-control" id="descricao" formControlName="descricao" rows="2"></textarea>
+    </div>
+    <div class="mb-3">
+        <label for="nomePalestrante" class="form-label">Nome do Palestrante</label>
+        <input type="text" class="form-control" id="nomePalestrante" formControlName="nomePalestrante">
+    </div>
+    <div class="mb-3">
+        <label for="localEvento" class="form-label">Local do Evento</label>
+        <input type="text" class="form-control" id="localEvento" formControlName="localEvento">
+    </div>
+    <div class="mb-3">
+        <label for="dataEvento" class="form-label">Data e Hora</label>
+        <input type="datetime-local" class="form-control" id="dataEvento" formControlName="dataEvento">
+    </div>
+    
+    <button type="submit" class="btn btn-primary" [disabled]="!formularioEvento.valid">Cadastrar Evento</button>
+</form>

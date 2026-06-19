@@ -1,0 +1,47 @@
+<div class="container mt-4">
+    <h1 class="text-center mb-4">Palestras Disponíveis</h1>
+
+    @if (mensagem) {
+        <div class="alert alert-{{ tipoMensagem }} alert-dismissible fade show" role="alert" style="max-width: 600px; margin: 0 auto 20px auto;">
+            {{ mensagem }}
+            <button type="button" class="btn-close" (click)="mensagem = ''" aria-label="Close"></button>
+        </div>
+    }
+
+    <div class="row">
+        @for (palestra of palestras; track palestra.id) {
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm border-dark">
+                    <div class="card-header bg-primary text-white text-center">
+                        <h5 class="card-title mb-0">{{ palestra.titulo }}</h5>
+                    </div>
+                    <div class="card-body bg-light">
+                        <p class="card-text text-muted">{{ palestra.descricao }}</p>
+                        <hr>
+                        <p class="mb-1"><strong>Palestrante:</strong> {{ palestra.nomePalestrante }}</p>
+                        <p class="mb-1"><strong>Local:</strong> {{ palestra.localEvento }}</p>
+                        <p class="mb-1"><strong>Data:</strong> {{ palestra.dataEvento | date:'dd/MM/yyyy HH:mm' }}</p>
+                    </div>
+                    <div class="card-footer text-center bg-white border-0 pb-3">
+                        @if (usuarioId) {
+                            @if (minhasInscricoes.includes(palestra.id)) {
+                                <button class="btn btn-secondary w-100 mb-2" disabled>Inscrito ✓</button>
+                                <!-- Passando o título também -->
+                                <button class="btn btn-outline-danger btn-sm w-100" (click)="cancelarInscricao(palestra.id, palestra.titulo)">Cancelar Inscrição</button>
+                            } @else {
+                                <!-- Passando o título também -->
+                                <button class="btn btn-success w-100" (click)="inscrever(palestra.id, palestra.titulo)">Quero me inscrever!</button>
+                            }
+                        } @else {
+                            <span class="text-danger fw-bold">Faça login para se inscrever</span>
+                        }
+                    </div>
+                </div>
+            </div>
+        } @empty {
+            <div class="col-12 text-center mt-5">
+                <h4 class="text-muted">Nenhuma palestra agendada no momento.</h4>
+            </div>
+        }
+    </div>
+</div>
