@@ -49,19 +49,19 @@ Certifique-se de que o servidor MySQL está rodando na porta padrão 3306.
 Navegue até a pasta server:
 
 
-bashcd server
+bash cd server
 
 
 Instale as dependências:
 
 
-bashnpm install
+bash npm install
 
 
 Inicie o servidor:
 
 
-bashnodemon server.js
+bash nodemon server.js
 
 
 3. Frontend
@@ -70,13 +70,13 @@ bashnodemon server.js
 Na raiz do projeto, abra um novo terminal e instale as dependências:
 
 
-bashnpm install
+bash npm install
 
 
 Inicie a aplicação Angular:
 
 
-bashng serve
+bash ng serve
 
 
 Acesse http://localhost:4200 no seu navegador.
