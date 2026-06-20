@@ -41,7 +41,7 @@ Angular CLI
 Importe o arquivo .sql no phpMyAdmin (via XAMPP).
 Certifique-se de que o servidor MySQL está rodando na porta padrão 3306.
 
-
+**SQL:** O script de criação do banco de dados encontra-se no arquivo `sistema_palestras.sql` na raiz do repositório.
 
 2. Backend
 
